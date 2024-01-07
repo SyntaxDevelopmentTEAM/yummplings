@@ -3,6 +3,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const links = document.querySelectorAll('nav a');
     const sections = document.querySelectorAll('section');
 
+    function submitForm() {
+        // Retrieve form data using vanilla JavaScript
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        // Send data using AJAX
+        $.ajax({
+            type: "POST",
+            url: "submit_form.php",
+            data: { name: name, email: email, message: message },
+            success: function(response) {
+                // Handle the response if needed
+                console.log(response);
+                // Redirect to thank-you page or perform other actions
+                window.location.href = "thank_you.html";
+            },
+            error: function(error) {
+                // Handle errors
+                console.error("Error:", error);
+            }
+        });
+    }
+
+
     function switchPage(targetPage) {
         sections.forEach(section => {
             section.classList.remove('show');

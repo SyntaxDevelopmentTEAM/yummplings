@@ -353,3 +353,63 @@ button {
     border: none;
     cursor: pointer;
 }
+
+.image-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.image-item {
+    width: 45%; /* Adjust the width based on your design */
+    margin: 10px;
+    overflow: hidden;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.image-item:hover img {
+    transform: scale(1.1); /* Increase size on hover */
+}
+
+/* Add this to your existing CSS or create a new section for mobile styles */
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 0.5em;
+    }
+
+    nav a {
+        padding: 10px 15px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    .menu-item {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .menu-item img {
+        margin-bottom: 10px;
+    }
+
+    footer {
+        padding: 0.2em;
+    }
+
+    /* Add more styles as needed for better mobile usability */
+}
+
+#mainfrozen-image {
+    max-width: 20%; /* Adjust the percentage or use specific pixels */
+}
+
